@@ -1,6 +1,8 @@
 import { Router } from 'express';
 
-import worldCupController from './controller/worldCupController';
+import WorldCupController from './controller/worldCupController';
+
+const worldCupController = new WorldCupController();
 
 const router = Router();
 

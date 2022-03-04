@@ -1,4 +1,4 @@
-import { Schema, model, Document, Types } from 'mongoose';
+import { Schema, Document, Types } from 'mongoose';
 
 export interface IWorldCup extends Document {
   year: number,
@@ -12,7 +12,7 @@ export interface IWorldCup extends Document {
   bestYoungPlayer?: string,
 }
 
-const WorldCupSchema = new Schema<IWorldCup>({
+export const WorldCupSchema = new Schema<IWorldCup>({
   id: { type: Types.ObjectId },
   year: { type: Number, required: true },
   hostCountry: { type: String, required: true },
@@ -24,7 +24,3 @@ const WorldCupSchema = new Schema<IWorldCup>({
   bestGoalkeeper: { type: String, required: false },
   bestYoungPlayer: { type: String, required: false },
 });
-
-const WorldCupModel = model<IWorldCup>('tournaments', WorldCupSchema);
-
-export default WorldCupModel;
